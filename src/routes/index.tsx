@@ -1,24 +1,48 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Hero } from "@/components/site/Hero";
+import { TrustBar } from "@/components/site/TrustBar";
+import { Stats } from "@/components/site/Stats";
+import { FeaturedCars } from "@/components/site/FeaturedCars";
+import { WhyChooseUs } from "@/components/site/WhyChooseUs";
+import { HowItWorks } from "@/components/site/HowItWorks";
+import { FinanceCta } from "@/components/site/FinanceCta";
+import { Testimonials } from "@/components/site/Testimonials";
+import { InstagramSection } from "@/components/site/InstagramSection";
+import { LocationMap } from "@/components/site/LocationMap";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Himalyan Wheels — Used Cars in Solan, Himachal Pradesh" },
+      {
+        name: "description",
+        content:
+          "Buy, sell or exchange quality pre-owned cars in Solan, Himachal Pradesh. Transparent deals, finance assistance and WhatsApp support.",
+      },
+      { property: "og:title", content: "Himalyan Wheels — Used Cars in Solan, Himachal Pradesh" },
+      {
+        property: "og:description",
+        content:
+          "Buy, sell or exchange quality pre-owned cars at competitive prices with flexible finance options.",
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Hero />
+      <TrustBar />
+      <Stats />
+      <FeaturedCars />
+      <WhyChooseUs />
+      <HowItWorks />
+      <FinanceCta />
+      <Testimonials />
+      <InstagramSection />
+      <LocationMap />
+    </>
   );
 }

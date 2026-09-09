@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, Route, Routes, useLocation, useParams } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, BadgeCheck, BarChart3, CarFront, Check, ChevronLeft, ChevronRight, CircleCheck, Compass, Fuel, Gauge, Instagram, Landmark, Menu, MessageCircle, Phone, Search, ShieldCheck, Tag, X, Zap } from "lucide-react";
+import { ArrowUpRight, BadgeCheck, ChartBar as BarChart3, CarFront, Check, ChevronLeft, ChevronRight, CircleCheck, Compass, Fuel, Gauge, Instagram, Landmark, Menu, MessageCircle, Phone, Search, ShieldCheck, Tag, X, Zap } from "lucide-react";
 import { cars, formatPrice, getCarBySlug, type Car } from "./data/cars";
 import { carWhatsAppUrl, exchangeWhatsAppUrl, financeWhatsAppUrl, generalWhatsAppUrl, LOCATION, PHONE_PRIMARY, PHONE_SECONDARY, sellWhatsAppUrl } from "./lib/whatsapp";
 

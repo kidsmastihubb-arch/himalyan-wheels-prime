@@ -17,5 +17,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["src/main.tsx", "src/App.tsx", "src/index.css", "src/data/cars.ts", "src/lib/whatsapp.ts"]
 }

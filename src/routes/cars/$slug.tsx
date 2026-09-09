@@ -21,7 +21,8 @@ export const Route = createFileRoute("/cars/$slug")({
           content: car
             ? `${title} for sale in Solan, Himachal Pradesh. ${car.fuel}, ${car.transmission}, ${formatKm(car.kmDriven)}. ${formatPrice(car.price)}.`
             : "View this quality pre-owned car available at Himalyan Wheels.",
-      },
+        },
+      ],
     };
   },
   component: CarDetail,

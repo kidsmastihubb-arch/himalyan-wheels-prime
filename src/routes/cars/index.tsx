@@ -1,4 +1,4 @@
-importimport { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { cars, type Car } from "@/data/cars";
 import { CarCard } from "@/components/site/CarCard";

@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  color: #f6f6f4;
+  background: #0a0a0b;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: #0a0a0b; }
+button, a, input, select, textarea { font: inherit; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; }
+::selection { background: #c4923a; color: #050505; }
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .display { font-family: "Space Grotesk", sans-serif; }
+  .eyebrow { @apply text-[10px] font-semibold uppercase tracking-[0.24em] text-gold-400; }
+  .glass { @apply border border-white/10 bg-white/[0.05] backdrop-blur-xl; }
+  .gold-line { @apply h-px bg-gradient-to-r from-transparent via-gold-400/80 to-transparent; }
+  .focus-ring { @apply outline-none ring-2 ring-gold-400 ring-offset-2 ring-offset-ink-950; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+}

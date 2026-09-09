@@ -1,235 +1,148 @@
-import creta from "@/assets/cars/creta.jpg";
-import brezza from "@/assets/cars/brezza.jpg";
-import thar from "@/assets/cars/thar.jpg";
-import fortuner from "@/assets/cars/fortuner.jpg";
-import city from "@/assets/cars/city.jpg";
-import swift from "@/assets/cars/swift.jpg";
-
-/**
- * DEMO INVENTORY.
- * These are sample listings used while real stock photos and vehicles are
- * being added. Replace the entries below with real vehicles — the UI reads
- * everything from this file only.
- */
-export const IS_DEMO_INVENTORY = true;
-
-export type Fuel = "Petrol" | "Diesel" | "CNG";
-export type Transmission = "Manual" | "Automatic";
-export type BodyType = "SUV" | "Sedan" | "Hatchback" | "MUV";
-
-export interface Car {
+export type Car = {
   id: string;
   slug: string;
   brand: string;
   model: string;
   variant: string;
   year: number;
-  /** price in lakh */
   price: number;
   kmDriven: number;
-  fuel: Fuel;
-  transmission: Transmission;
-  bodyType: BodyType;
-  owners: string;
+  fuel: "Diesel" | "Petrol" | "CNG" | "Electric";
+  transmission: "Manual" | "Automatic";
+  bodyType: "SUV" | "Sedan" | "Hatchback" | "MUV";
   location: string;
-  condition: string;
-  badge?: "Featured" | "Just Added" | "Great Deal";
   description: string;
   features: string[];
   images: string[];
   featured: boolean;
-  status: "available" | "sold";
-}
+  status: "Sample listing" | "Available";
+  badge?: "Featured" | "Just Added" | "Great Deal";
+};
 
 export const cars: Car[] = [
   {
-    id: "hw-01",
+    id: "creta-sx-2021",
     slug: "hyundai-creta-sx-2021",
     brand: "Hyundai",
     model: "Creta",
     variant: "SX",
     year: 2021,
-    price: 12.5,
+    price: 1250000,
     kmDriven: 42000,
     fuel: "Diesel",
     transmission: "Manual",
     bodyType: "SUV",
-    owners: "1st Owner",
-    location: "Solan, Himachal Pradesh",
-    condition: "Excellent",
-    badge: "Featured",
-    description:
-      "A well-maintained Creta SX diesel that has spent its life on Himachal roads. Suspension, brakes and clutch have been checked, service history is available and the vehicle is ready for immediate transfer.",
-    features: [
-      "Touchscreen infotainment",
-      "Rear parking camera",
-      "Cruise control",
-      "Automatic climate control",
-      "Alloy wheels",
-      "Full service history",
-    ],
-    images: [creta],
+    location: "Solan, HP",
+    description: "A beautifully kept, feature-rich Creta with a confident road presence and a refined diesel drive.",
+    features: ["Panoramic Sunroof", "Cruise Control", "Rear Camera", "Wireless Charging", "Push Button Start"],
+    images: ["https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=1200", "https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=1200"],
     featured: true,
-    status: "available",
+    status: "Sample listing",
+    badge: "Featured",
   },
   {
-    id: "hw-02",
+    id: "thar-lx-2022",
     slug: "mahindra-thar-lx-2022",
     brand: "Mahindra",
     model: "Thar",
-    variant: "LX 4x4",
+    variant: "LX Hard Top",
     year: 2022,
-    price: 14.75,
-    kmDriven: 28000,
+    price: 1425000,
+    kmDriven: 28500,
     fuel: "Diesel",
     transmission: "Manual",
     bodyType: "SUV",
-    owners: "1st Owner",
-    location: "Solan, Himachal Pradesh",
-    condition: "Excellent",
-    badge: "Great Deal",
-    description:
-      "Hard-top Thar 4x4 that is genuinely suited to hill driving. Tyres have plenty of life left, the underbody is clean and there is no accident history on record.",
-    features: [
-      "4x4 drivetrain",
-      "Hard top",
-      "Cruise control",
-      "Touchscreen with Android Auto",
-      "Front and rear washers",
-      "Accident free",
-    ],
-    images: [thar],
+    location: "Kandaghat, HP",
+    description: "Adventure-ready and exceptionally presented. The Thar that turns every mountain road into a destination.",
+    features: ["4x4 Drive", "Touchscreen Infotainment", "Alloy Wheels", "Roof Rails", "Hill Hold Assist"],
+    images: ["https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg?auto=compress&cs=tinysrgb&w=1200", "https://images.pexels.com/photos/193999/pexels-photo-193999.jpeg?auto=compress&cs=tinysrgb&w=1200"],
     featured: true,
-    status: "available",
+    status: "Sample listing",
+    badge: "Just Added",
   },
   {
-    id: "hw-03",
-    slug: "maruti-suzuki-brezza-zxi-2020",
+    id: "fortuner-4x4-2020",
+    slug: "toyota-fortuner-4x4-2020",
+    brand: "Toyota",
+    model: "Fortuner",
+    variant: "4x4 AT",
+    year: 2020,
+    price: 2980000,
+    kmDriven: 51000,
+    fuel: "Diesel",
+    transmission: "Automatic",
+    bodyType: "SUV",
+    location: "Solan, HP",
+    description: "Commanding, capable and maintained with care. A premium full-size SUV built for long journeys.",
+    features: ["4x4 Automatic", "Leather Interiors", "7 Seats", "LED Headlamps", "Downhill Assist"],
+    images: ["https://images.pexels.com/photos/112460/pexels-photo-112460.jpeg?auto=compress&cs=tinysrgb&w=1200", "https://images.pexels.com/photos/104401/pexels-photo-104401.jpeg?auto=compress&cs=tinysrgb&w=1200"],
+    featured: true,
+    status: "Sample listing",
+    badge: "Great Deal",
+  },
+  {
+    id: "brezza-zxi-2022",
+    slug: "maruti-suzuki-brezza-zxi-2022",
     brand: "Maruti Suzuki",
     model: "Brezza",
     variant: "ZXi",
-    year: 2020,
-    price: 8.4,
-    kmDriven: 51000,
+    year: 2022,
+    price: 980000,
+    kmDriven: 19800,
     fuel: "Petrol",
     transmission: "Manual",
     bodyType: "SUV",
-    owners: "1st Owner",
-    location: "Solan, Himachal Pradesh",
-    condition: "Very Good",
+    location: "Solan, HP",
+    description: "Low-mileage, city-friendly and ready for the hills with modern comfort and excellent practicality.",
+    features: ["Electric Sunroof", "6 Airbags", "SmartPlay Pro+", "ESP", "Rear AC Vents"],
+    images: ["https://images.pexels.com/photos/305070/pexels-photo-305070.jpeg?auto=compress&cs=tinysrgb&w=1200", "https://images.pexels.com/photos/161100/pexels-photo-161100.jpeg?auto=compress&cs=tinysrgb&w=1200"],
+    featured: false,
+    status: "Sample listing",
     badge: "Just Added",
-    description:
-      "Compact SUV that is easy to drive on narrow hill roads and cheap to run. Regular servicing done at authorised workshops, interiors are clean and paint is largely original.",
-    features: [
-      "Smart play infotainment",
-      "Reverse camera",
-      "Dual airbags",
-      "Alloy wheels",
-      "Auto climate control",
-      "Original paint",
-    ],
-    images: [brezza],
-    featured: true,
-    status: "available",
   },
   {
-    id: "hw-04",
-    slug: "toyota-fortuner-4x2-2019",
-    brand: "Toyota",
-    model: "Fortuner",
-    variant: "4x2 AT",
-    year: 2019,
-    price: 27.9,
-    kmDriven: 68000,
-    fuel: "Diesel",
-    transmission: "Automatic",
-    bodyType: "SUV",
-    owners: "2nd Owner",
-    location: "Solan, Himachal Pradesh",
-    condition: "Very Good",
-    description:
-      "A proper highway and hill cruiser with the dependable 2.8 diesel automatic. Timing, fluids and brakes were serviced recently and all documents are in order.",
-    features: [
-      "Automatic transmission",
-      "Leather seats",
-      "Push button start",
-      "Powered driver seat",
-      "Reverse camera",
-      "Complete documentation",
-    ],
-    images: [fortuner],
-    featured: true,
-    status: "available",
-  },
-  {
-    id: "hw-05",
-    slug: "honda-city-vx-2018",
+    id: "city-v-2021",
+    slug: "honda-city-v-2021",
     brand: "Honda",
     model: "City",
-    variant: "VX CVT",
-    year: 2018,
-    price: 7.95,
-    kmDriven: 59000,
+    variant: "V CVT",
+    year: 2021,
+    price: 1125000,
+    kmDriven: 31000,
     fuel: "Petrol",
     transmission: "Automatic",
     bodyType: "Sedan",
-    owners: "1st Owner",
-    location: "Solan, Himachal Pradesh",
-    condition: "Very Good",
-    description:
-      "Comfortable petrol automatic sedan, ideal for family use between Solan, Shimla and Chandigarh. Smooth gearbox, clean interiors and a strong service record.",
-    features: [
-      "CVT automatic",
-      "Sunroof",
-      "Cruise control",
-      "Rear AC vents",
-      "Reverse camera",
-      "Single owner",
-    ],
-    images: [city],
+    location: "Shimla, HP",
+    description: "Elegant, comfortable and effortless. A well-kept City for drivers who appreciate quiet confidence.",
+    features: ["Honda Sensing", "Sunroof", "CVT Automatic", "Connected Car Tech", "Rear Camera"],
+    images: ["https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=1200"],
     featured: false,
-    status: "available",
+    status: "Sample listing",
   },
   {
-    id: "hw-06",
-    slug: "maruti-suzuki-swift-vxi-2019",
-    brand: "Maruti Suzuki",
-    model: "Swift",
-    variant: "VXi",
-    year: 2019,
-    price: 5.25,
-    kmDriven: 46000,
+    id: "venue-sx-2022",
+    slug: "hyundai-venue-sx-2022",
+    brand: "Hyundai",
+    model: "Venue",
+    variant: "SX Turbo",
+    year: 2022,
+    price: 925000,
+    kmDriven: 24000,
     fuel: "Petrol",
     transmission: "Manual",
-    bodyType: "Hatchback",
-    owners: "1st Owner",
-    location: "Solan, Himachal Pradesh",
-    condition: "Good",
-    badge: "Great Deal",
-    description:
-      "A light, economical hatchback that makes sense as a first car or a second city car. Peppy petrol engine, low running costs and easy parts availability across Himachal.",
-    features: [
-      "Dual airbags",
-      "ABS with EBD",
-      "Touchscreen audio",
-      "Keyless entry",
-      "Fuel efficient",
-      "Low maintenance",
-    ],
-    images: [swift],
+    bodyType: "SUV",
+    location: "Solan, HP",
+    description: "Compact dimensions, big personality. A spirited turbo SUV that fits perfectly into mountain life.",
+    features: ["BlueLink Connected", "Sunroof", "Alloy Wheels", "Air Purifier", "Drive Modes"],
+    images: ["https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=1200"],
     featured: false,
-    status: "available",
+    status: "Sample listing",
   },
 ];
 
-export function carTitle(car: Car) {
-  return `${car.year} ${car.brand} ${car.model} ${car.variant}`.trim();
-}
+export const formatPrice = (price: number): string => {
+  if (price >= 10000000) return `₹${(price / 10000000).toFixed(2)} Cr`;
+  return `₹${(price / 100000).toFixed(2)} Lakh`;
+};
 
-export function getCar(slug: string) {
-  return cars.find((c) => c.slug === slug);
-}
-
-export const brands = [...new Set(cars.map((c) => c.brand))].sort();
-export const bodyTypes = [...new Set(cars.map((c) => c.bodyType))].sort();
-export const fuels = [...new Set(cars.map((c) => c.fuel))].sort();
+export const getCarBySlug = (slug: string): Car | undefined => cars.find((car) => car.slug === slug);

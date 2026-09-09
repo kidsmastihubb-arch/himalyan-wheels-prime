@@ -10,7 +10,7 @@ const founderPlaceholder = "https://images.pexels.com/photos/614810/pexels-photo
 
 const navItems = [["Cars", "/cars"], ["Buy", "/buy"], ["Sell", "/sell-your-car"], ["Exchange", "/exchange"], ["Finance", "/finance"], ["About", "/about"], ["Contact", "/contact"]];
 
-function useScrollTop() { const { pathname } = useLocation(); useEffect(() => window.scrollTo(0, 0), [pathname]); }
+function useScrollTop() { const { pathname } = useLocation(); useEffect(() => { window.scrollTo(0, 0); }, [pathname]); }
 function Shell({ children }: { children: React.ReactNode }) { useScrollTop(); const { pathname } = useLocation(); useEffect(() => { const pageName = pathname === "/" ? "Trusted Used Cars in Himachal Pradesh" : pathname === "/cars" ? "Used Cars for Sale in Himachal Pradesh" : pathname.startsWith("/cars/") ? "Car Details | Himalyan Wheels" : pathname.includes("sell") ? "Sell Your Car | Himalyan Wheels" : pathname.includes("finance") ? "Car Finance Assistance | Himalyan Wheels" : pathname.includes("exchange") ? "Car Exchange | Himalyan Wheels" : pathname.includes("about") ? "About Himalyan Wheels" : pathname.includes("contact") ? "Contact Himalyan Wheels" : "Himalyan Wheels | Used Car Dealer in Himachal Pradesh"; document.title = `${pageName} — Himalyan Wheels`; const description = document.querySelector('meta[name="description"]'); description?.setAttribute("content", "Himalyan Wheels is a trusted used car dealer in Solan, Himachal Pradesh. Buy, sell and exchange quality pre-owned cars with confidence."); }, [pathname]); return <><Navbar /><main>{children}</main><FloatingContact /><Footer /></>; }
 function Navbar() {
   const [open, setOpen] = useState(false); const [scrolled, setScrolled] = useState(false);
